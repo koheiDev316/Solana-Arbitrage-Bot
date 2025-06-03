@@ -1,4 +1,4 @@
-# [📞Telegram](https://t.me/chriDev316)
+# [📞Telegram](https://t.me/chrisDev316)
 
 # Solana Arbitrage Bot Architecture
 
