@@ -1,0 +1,16 @@
+{
+    "tokens": {
+        "SOL": {
+            "address": "So11111111111111111111111111111111111111112",
+            "decimal": 9
+        },
+        "Pnut": {
+            "address": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+            "decimal": 6
+        },
+        "BONK": {
+            "address": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+            "decimal": 5
+        }
+    }
+}
