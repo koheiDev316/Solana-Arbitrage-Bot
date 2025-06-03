@@ -9,6 +9,7 @@ use {
 pub struct PriceMonitor {
     dex_clients: Vec<Arc<dyn DexClient>>,
     price_cache: Arc<RwLock<HashMap<String, PriceData>>>,
+    task_handles: Option<Vec<tokio::task::JoinHandle<()>>>, // For cleanup
 }
 
 impl PriceMonitor {
@@ -63,5 +64,13 @@ impl PriceMonitor {
         let cache = self.price_cache.read().await;
         cache.get(&format!("{}:{}:{}", token_in, token_out, dex_type))
             .cloned()
+    }
+
+    pub async fn stop_monitoring(&mut self) {
+        if let Some(handles) = self.task_handles.take() {
+            for handle in handles {
+                handle.abort();
+            }
+        }
     }
 } 
